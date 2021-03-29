@@ -1,0 +1,40 @@
+Traceback (most recent call last):
+  File "setup.py", line 22, in <module>
+    setup(name="FCDMF",
+  File "/home/pei/app/anaconda3/envs/py38/lib/python3.8/site-packages/numpy/distutils/core.py", line 135, in setup
+    config = configuration()
+  File "setup.py", line 18, in configuration
+    config.add_subpackage('FCDMF_pack')
+  File "/home/pei/app/anaconda3/envs/py38/lib/python3.8/site-packages/numpy/distutils/misc_util.py", line 1018, in add_subpackage
+    config_list = self.get_subpackage(subpackage_name, subpackage_path,
+  File "/home/pei/app/anaconda3/envs/py38/lib/python3.8/site-packages/numpy/distutils/misc_util.py", line 984, in get_subpackage
+    config = self._get_configuration_from_setup_py(
+  File "/home/pei/app/anaconda3/envs/py38/lib/python3.8/site-packages/numpy/distutils/misc_util.py", line 926, in _get_configuration_from_setup_py
+    config = setup_module.configuration(*args)
+  File "FCDMF_pack/setup.py", line 8, in configuration
+    config.add_subpackage('FCDMF')
+  File "/home/pei/app/anaconda3/envs/py38/lib/python3.8/site-packages/numpy/distutils/misc_util.py", line 1018, in add_subpackage
+    config_list = self.get_subpackage(subpackage_name, subpackage_path,
+  File "/home/pei/app/anaconda3/envs/py38/lib/python3.8/site-packages/numpy/distutils/misc_util.py", line 984, in get_subpackage
+    config = self._get_configuration_from_setup_py(
+  File "/home/pei/app/anaconda3/envs/py38/lib/python3.8/site-packages/numpy/distutils/misc_util.py", line 910, in _get_configuration_from_setup_py
+    setup_module = npy_load_module('_'.join(n.split('.')),
+  File "/home/pei/app/anaconda3/envs/py38/lib/python3.8/site-packages/numpy/compat/py3k.py", line 132, in npy_load_module
+    return SourceFileLoader(name, fn).load_module()
+  File "<frozen importlib._bootstrap_external>", line 462, in _check_name_wrapper
+  File "<frozen importlib._bootstrap_external>", line 962, in load_module
+  File "<frozen importlib._bootstrap_external>", line 787, in load_module
+  File "<frozen importlib._bootstrap>", line 265, in _load_module_shim
+  File "<frozen importlib._bootstrap>", line 702, in _load
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "FCDMF_pack/FCDMF/setup.py", line 6, in <module>
+    from public_setup import cg
+  File "FCDMF_pack/public_setup.py", line 1, in <module>
+    from FCDMF_pack.Public import cg
+  File "/home/pei/FCDMF/FCDMF_code/FCDMF_pack/__init__.py", line 2, in <module>
+    from FCDMF_valarray import FCDMF as FCDMF2
+  File "FCDMF_pack/FCDMF_valarray/__init__.py", line 1, in <module>
+    from .FCDMF_ import PyFCDMF as FCDMF
+ModuleNotFoundError: No module named 'FCDMF_valarray.FCDMF_'
