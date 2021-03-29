@@ -7,7 +7,7 @@ def configuration(parent_package='', top_path=None):
     config = Configuration('FCDMF_pack', parent_package, top_path)
     config.add_subpackage('FCDMF')
     config.add_subpackage('FCDMF_valarray')
-    config.add_data_dir('Public')
+    config.add_subpackage('Public')
 
     return config
 

@@ -6,6 +6,8 @@ def configuration(parent_package='', top_path=None):
 
     config = Configuration('Public', parent_package, top_path)
     config.add_subpackage('CppFuns')
+    config.add_data_dir('MPIR')
+    config.add_data_dir('Eigen339')
 
     return config
 
