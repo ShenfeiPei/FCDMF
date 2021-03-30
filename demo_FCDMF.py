@@ -2,8 +2,8 @@ import numpy as np
 import time
 from scipy import sparse
 import sys
-from FCDMF_pack.FCDMF import FCDMF
-from FCDMF_pack.Public import Ifuns, Gfuns, Mfuns
+from FCDMF2.FCDMF import FCDMF
+from FCDMF2.Public import Ifuns, Gfuns, Mfuns
 
 X, y_true, N, dim, c_true = Ifuns.load_mat("./dataset/BinaryAlpha_20200916.mat")
 #  X = Ifuns.normalize_fea(X, 0)

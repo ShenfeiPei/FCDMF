@@ -1,40 +1,105 @@
-Traceback (most recent call last):
-  File "setup.py", line 22, in <module>
-    setup(name="FCDMF",
-  File "/home/pei/app/anaconda3/envs/py38/lib/python3.8/site-packages/numpy/distutils/core.py", line 135, in setup
-    config = configuration()
-  File "setup.py", line 18, in configuration
-    config.add_subpackage('FCDMF_pack')
-  File "/home/pei/app/anaconda3/envs/py38/lib/python3.8/site-packages/numpy/distutils/misc_util.py", line 1018, in add_subpackage
-    config_list = self.get_subpackage(subpackage_name, subpackage_path,
-  File "/home/pei/app/anaconda3/envs/py38/lib/python3.8/site-packages/numpy/distutils/misc_util.py", line 984, in get_subpackage
-    config = self._get_configuration_from_setup_py(
-  File "/home/pei/app/anaconda3/envs/py38/lib/python3.8/site-packages/numpy/distutils/misc_util.py", line 926, in _get_configuration_from_setup_py
-    config = setup_module.configuration(*args)
-  File "FCDMF_pack/setup.py", line 8, in configuration
-    config.add_subpackage('FCDMF')
-  File "/home/pei/app/anaconda3/envs/py38/lib/python3.8/site-packages/numpy/distutils/misc_util.py", line 1018, in add_subpackage
-    config_list = self.get_subpackage(subpackage_name, subpackage_path,
-  File "/home/pei/app/anaconda3/envs/py38/lib/python3.8/site-packages/numpy/distutils/misc_util.py", line 984, in get_subpackage
-    config = self._get_configuration_from_setup_py(
-  File "/home/pei/app/anaconda3/envs/py38/lib/python3.8/site-packages/numpy/distutils/misc_util.py", line 910, in _get_configuration_from_setup_py
-    setup_module = npy_load_module('_'.join(n.split('.')),
-  File "/home/pei/app/anaconda3/envs/py38/lib/python3.8/site-packages/numpy/compat/py3k.py", line 132, in npy_load_module
-    return SourceFileLoader(name, fn).load_module()
-  File "<frozen importlib._bootstrap_external>", line 462, in _check_name_wrapper
-  File "<frozen importlib._bootstrap_external>", line 962, in load_module
-  File "<frozen importlib._bootstrap_external>", line 787, in load_module
-  File "<frozen importlib._bootstrap>", line 265, in _load_module_shim
-  File "<frozen importlib._bootstrap>", line 702, in _load
-  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 783, in exec_module
-  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
-  File "FCDMF_pack/FCDMF/setup.py", line 6, in <module>
-    from public_setup import cg
-  File "FCDMF_pack/public_setup.py", line 1, in <module>
-    from FCDMF_pack.Public import cg
-  File "/home/pei/FCDMF/FCDMF_code/FCDMF_pack/__init__.py", line 2, in <module>
-    from FCDMF_valarray import FCDMF as FCDMF2
-  File "FCDMF_pack/FCDMF_valarray/__init__.py", line 1, in <module>
-    from .FCDMF_ import PyFCDMF as FCDMF
-ModuleNotFoundError: No module named 'FCDMF_valarray.FCDMF_'
+In file included from /home/pei/app/anaconda3/envs/py38/lib/python3.8/site-packages/numpy/core/include/numpy/ndarraytypes.h:1822,
+                 from /home/pei/app/anaconda3/envs/py38/lib/python3.8/site-packages/numpy/core/include/numpy/ndarrayobject.h:12,
+                 from /home/pei/app/anaconda3/envs/py38/lib/python3.8/site-packages/numpy/core/include/numpy/arrayobject.h:4,
+                 from FCDMF2/FCDMF/FCDMF_.cpp:664:
+/home/pei/app/anaconda3/envs/py38/lib/python3.8/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: #warning "Using deprecated NumPy API, disable it with " "#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-Wcpp]
+   17 | #warning "Using deprecated NumPy API, disable it with " \
+      |  ^~~~~~~
+In file included from FCDMF2/FCDMF/FCDMF_.cpp:659:
+/home/pei/FCDMF/FCDMF_code/FCDMF2/Public/CppFuns/CppFuns.cpp: In function ‘void cf::EuDist2_byCol(std::vector<std::vector<double> >&, std::vector<std::vector<double> >&, std::vector<std::vector<double> >&)’:
+/home/pei/FCDMF/FCDMF_code/FCDMF2/Public/CppFuns/CppFuns.cpp:41:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<std::vector<double> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+   41 |             for (int l = 0; l < B.size(); l++){
+      |                             ~~^~~~~~~~~~
+In file included from FCDMF2/FCDMF/FCDMF_.cpp:659:
+/home/pei/FCDMF/FCDMF_code/FCDMF2/Public/CppFuns/CppFuns.cpp: In function ‘void cf::EuDist2_byCol(std::vector<std::vector<double> >&, std::vector<double>&, std::vector<std::vector<double> >&, std::vector<double>&, std::vector<std::vector<double> >&)’:
+/home/pei/FCDMF/FCDMF_code/FCDMF2/Public/CppFuns/CppFuns.cpp:87:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<std::vector<double> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+   87 |             for (int l = 0; l < B.size(); l++){
+      |                             ~~^~~~~~~~~~
+/home/pei/FCDMF/FCDMF_code/FCDMF2/Public/CppFuns/CppFuns.cpp: In function ‘void cf::square_sum_by_row(std::vector<std::vector<double> >&, std::vector<double>&)’:
+/home/pei/FCDMF/FCDMF_code/FCDMF2/Public/CppFuns/CppFuns.cpp:97:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<std::vector<double> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+   97 |         for (int i = 0; i < X.size(); i++){
+      |                         ~~^~~~~~~~~~
+/home/pei/FCDMF/FCDMF_code/FCDMF2/Public/CppFuns/CppFuns.cpp: In function ‘void cf::square_sum_by_row(std::valarray<std::valarray<double> >&, std::valarray<double>&)’:
+/home/pei/FCDMF/FCDMF_code/FCDMF2/Public/CppFuns/CppFuns.cpp:105:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+  105 |         for (int i = 0; i < X.size(); i++){
+      |                         ~~^~~~~~~~~~
+/home/pei/FCDMF/FCDMF_code/FCDMF2/Public/CppFuns/CppFuns.cpp: In function ‘void cf::square_sum_by_col(std::vector<std::vector<double> >&, std::vector<double>&)’:
+/home/pei/FCDMF/FCDMF_code/FCDMF2/Public/CppFuns/CppFuns.cpp:113:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  113 |         for (int j = 0; j < X[0].size(); j++){
+      |                         ~~^~~~~~~~~~~~~
+/home/pei/FCDMF/FCDMF_code/FCDMF2/Public/CppFuns/CppFuns.cpp:115:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<std::vector<double> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  115 |             for (int i = 0; i < X.size(); i++){
+      |                             ~~^~~~~~~~~~
+In file included from FCDMF2/FCDMF/FCDMF_.cpp:660:
+FCDMF2/FCDMF/FCDMF.cpp: In constructor ‘FCDMF::FCDMF(std::vector<std::vector<double> >&, int)’:
+FCDMF2/FCDMF/FCDMF.cpp:11:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<std::vector<double> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+   11 |     for (int i = 0; i < B.size(); i++){
+      |                     ~~^~~~~~~~~~
+FCDMF2/FCDMF/FCDMF.cpp:12:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+   12 |         for (int j = 0; j < B[0].size(); j++){
+      |                         ~~^~~~~~~~~~~~~
+FCDMF2/FCDMF/FCDMF.cpp: In member function ‘void FCDMF::opt(int, std::vector<int>&, std::vector<int>&, int, int)’:
+FCDMF2/FCDMF/FCDMF.cpp:35:12: warning: unused variable ‘tmp_d’ [-Wunused-variable]
+   35 |     double tmp_d;
+      |            ^~~~~
+FCDMF2/FCDMF/FCDMF.cpp: In member function ‘void FCDMF::update_S(std::vector<int>&, std::vector<int>&, std::vector<std::vector<double> >&)’:
+FCDMF2/FCDMF/FCDMF.cpp:101:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<std::vector<double> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  101 |     for (int i = 0; i < B.size(); i++){
+      |                     ~~^~~~~~~~~~
+FCDMF2/FCDMF/FCDMF.cpp:102:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  102 |         for (int j = 0; j < B[0].size(); j++){
+      |                         ~~^~~~~~~~~~~~~
+FCDMF2/FCDMF/FCDMF.cpp: In member function ‘void FCDMF::update_pq(std::vector<std::vector<double> >&, std::vector<int>&, int)’:
+FCDMF2/FCDMF/FCDMF.cpp:128:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<int>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  128 |         for (int i = 0; i < y.size(); i++){
+      |                         ~~^~~~~~~~~~
+FCDMF2/FCDMF/FCDMF.cpp: In member function ‘void FCDMF::compute_nc(std::vector<int>&, std::vector<int>&)’:
+FCDMF2/FCDMF/FCDMF.cpp:152:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<int>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  152 |     for (int i = 0; i < y.size(); i++){
+      |                     ~~^~~~~~~~~~
+FCDMF2/FCDMF/FCDMF.cpp: In member function ‘void FCDMF::update_SQT(std::vector<std::vector<double> >&, std::vector<int>&, std::vector<std::vector<double> >&)’:
+FCDMF2/FCDMF/FCDMF.cpp:159:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  159 |     for (int i = 0; i < SQT[0].size(); i++){
+      |                     ~~^~~~~~~~~~~~~~~
+FCDMF2/FCDMF/FCDMF.cpp:161:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<std::vector<double> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  161 |         for (int j = 0; j < SQT.size(); j++){
+      |                         ~~^~~~~~~~~~~~
+FCDMF2/FCDMF/FCDMF.cpp: In member function ‘void FCDMF::update_STPT(std::vector<std::vector<double> >&, std::vector<int>&, std::vector<std::vector<double> >&)’:
+FCDMF2/FCDMF/FCDMF.cpp:169:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  169 |     for (int i = 0; i < STPT[0].size(); i++){
+      |                     ~~^~~~~~~~~~~~~~~~
+FCDMF2/FCDMF/FCDMF.cpp:171:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<std::vector<double> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  171 |         for (int j = 0; j < STPT.size(); j++){
+      |                         ~~^~~~~~~~~~~~~
+FCDMF2/FCDMF/FCDMF.cpp: In member function ‘double FCDMF::compute_obj(std::vector<std::vector<double> >&, std::vector<int>&, std::vector<int>&, std::vector<std::vector<double> >&)’:
+FCDMF2/FCDMF/FCDMF.cpp:180:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<std::vector<double> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  180 |     for (int i = 0; i < B.size(); i++){
+      |                     ~~^~~~~~~~~~
+FCDMF2/FCDMF/FCDMF.cpp:181:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  181 |         for (int j = 0; j < B[0].size(); j++){
+      |                         ~~^~~~~~~~~~~~~
+In file included from FCDMF2/FCDMF/FCDMF_.cpp:659:
+/home/pei/FCDMF/FCDMF_code/FCDMF2/Public/CppFuns/CppFuns.cpp: In instantiation of ‘double cf::median_vec2d(std::vector<std::vector<T> >&) [with T = int]’:
+/home/pei/FCDMF/FCDMF_code/FCDMF2/Public/CppFuns/CppFuns.cpp:147:61:   required from here
+/home/pei/FCDMF/FCDMF_code/FCDMF2/Public/CppFuns/CppFuns.cpp:136:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<std::vector<int> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  136 |         for (int i = 0; i < v.size(); i++){
+      |                         ~~^~~~~~~~~~
+/home/pei/FCDMF/FCDMF_code/FCDMF2/Public/CppFuns/CppFuns.cpp:137:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<int>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  137 |             for (int j = 0; j < v[i].size(); j++){
+      |                             ~~^~~~~~~~~~~~~
+/home/pei/FCDMF/FCDMF_code/FCDMF2/Public/CppFuns/CppFuns.cpp: In instantiation of ‘double cf::median_vec2d(std::vector<std::vector<T> >&) [with T = double]’:
+/home/pei/FCDMF/FCDMF_code/FCDMF2/Public/CppFuns/CppFuns.cpp:148:67:   required from here
+/home/pei/FCDMF/FCDMF_code/FCDMF2/Public/CppFuns/CppFuns.cpp:136:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<std::vector<double> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  136 |         for (int i = 0; i < v.size(); i++){
+      |                         ~~^~~~~~~~~~
+/home/pei/FCDMF/FCDMF_code/FCDMF2/Public/CppFuns/CppFuns.cpp:137:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  137 |             for (int j = 0; j < v[i].size(); j++){
+      |                             ~~^~~~~~~~~~~~~
+/home/pei/FCDMF/FCDMF_code/FCDMF2/Public/CppFuns/CppFuns.cpp: In instantiation of ‘void cf::symmetry(std::vector<std::vector<int> >&, std::vector<std::vector<T> >&, int) [with T = int]’:
+/home/pei/FCDMF/FCDMF_code/FCDMF2/Public/CppFuns/CppFuns.cpp:233:96:   required from here
+/home/pei/FCDMF/FCDMF_code/FCDMF2/Public/CppFuns/CppFuns.cpp:215:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<int>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  215 |                 for (int k = 0; k < RNN[i].size(); k++){
+      |                                 ~~^~~~~~~~~~~~~~~
+/home/pei/FCDMF/FCDMF_code/FCDMF2/Public/CppFuns/CppFuns.cpp: In instantiation of ‘void cf::symmetry(std::vector<std::vector<int> >&, std::vector<std::vector<T> >&, int) [with T = double]’:
+/home/pei/FCDMF/FCDMF_code/FCDMF2/Public/CppFuns/CppFuns.cpp:234:102:   required from here
+/home/pei/FCDMF/FCDMF_code/FCDMF2/Public/CppFuns/CppFuns.cpp:215:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<int>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
