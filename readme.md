@@ -2,8 +2,8 @@
 
 ### install
 ```
-python setup.py build_ext --inplace
+pip install alias_copyi_module_FCDMF
 ```
 
 ### usage:
-see demo.py
+see demo_FCDMF.py
