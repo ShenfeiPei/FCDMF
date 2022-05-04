@@ -36,6 +36,7 @@ def configuration(parent_package='', top_path=None):
 
                          library_dirs=library_dirs,
                          libraries=library_dirs,
+                         depends=["FCDMF_.pxd", "FCDMF_.pyx", "./Eigen339"]
 
                          #  define_macros=cg.define_macros,
                          )

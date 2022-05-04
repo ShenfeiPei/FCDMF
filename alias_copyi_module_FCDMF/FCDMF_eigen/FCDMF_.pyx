@@ -2,6 +2,7 @@ cimport numpy as np
 import numpy as np
 np.import_array()
 
+from libcpp cimport bool
 import time
 from .FCDMF_ cimport FCDMF
 
@@ -14,9 +15,11 @@ cdef class PyFCDMF():
     cdef double[:, :] B
     cdef int[:, :] Y
     cdef double[:] times
+    cdef bool debug
 
-    def __init__(self, np.ndarray[double, ndim=2] B, int c_true):
+    def __init__(self, np.ndarray[double, ndim=2] B, int c_true, bool debug):
         self.B = B
+        self.debug = debug
         self.c_FCDMF = FCDMF(B, c_true)
         self.num = B.shape[0]
         self.num_anchor = B.shape[1]
@@ -32,6 +35,9 @@ cdef class PyFCDMF():
 
         for rep_i in range(rep):
 
+            if self.debug:
+                print(f"rep_i = {rep_i}, begin")
+
             t_start = time.time()
 
             p = init_P[rep_i]
@@ -42,6 +48,8 @@ cdef class PyFCDMF():
             t_end = time.time()
 
             times[rep_i] = t_end - t_start
+            if self.debug:
+                print(f"rep_i = {rep_i}, end, time = {times[rep_i]}")
 
         self.Y = Y
         self.times = times

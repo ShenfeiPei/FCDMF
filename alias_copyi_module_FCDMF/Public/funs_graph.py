@@ -88,6 +88,8 @@ def knn_graph_tfree(X, knn, self_include=False, isSym=True):
     :param isSym: True or False, isSym = True by default
     :return: A, a matrix (graph) of n by n
     """
+    t_start = time.time()
+
     N, dim = X.shape
     NN_K, NND_K, time1 = knn_f(X, knn + 1, squared=True, self_include=self_include)
 
@@ -109,7 +111,9 @@ def knn_graph_tfree(X, knn, self_include=False, isSym=True):
     if isSym:
         A = (A + A.T) / 2
     
-    return A
+    t_end = time.time()
+    t = t_end - t_start
+    return A, t
 
 
 def kng_anchor(X, Anchor: np.ndarray, knn=20, way="gaussian", t="mean", HSI=False, shape=None, alpha=0):

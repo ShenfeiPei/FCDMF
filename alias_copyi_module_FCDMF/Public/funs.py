@@ -13,6 +13,23 @@ from sklearn.cluster import MiniBatchKMeans
 from joblib import Parallel, delayed
 from multiprocessing import Pool
 from functools import partial
+import pickle
+
+
+
+def savepkl(data, full_path, make_dir=True):
+
+    if make_dir:
+        path = os.path.dirname(full_path)
+        if not os.path.exists(path):
+            os.makedirs(path)
+
+    pickle.dump(data, open(full_path, "wb"))
+
+
+def loadpkl(full_path):
+    data = pickle.load(open(full_path, "rb"))
+    return data
 
 
 def loadmat(path, to_dense=True):

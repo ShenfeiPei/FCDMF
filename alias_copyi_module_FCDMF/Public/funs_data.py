@@ -1,7 +1,10 @@
 import os
 import numpy as np
+import pandas as pd
 import scipy.io as sio
 from scipy import sparse
+import matplotlib.pyplot as plt
+import matplotlib.transforms as mt
 
 
 def loadmat(path, to_dense=True):
@@ -59,7 +62,10 @@ def rand_ring(r, N, tur, cx=0, cy=0, s=0, e=2 * np.pi, dis="gaussian"):
 
     return x
 
-def twospirals(N=2000, degrees=570, start=90, noise=0.2):
+
+def twospirals(N=2000, degrees=570, start=90, noise=0.2, seed=0):
+    np.random.seed(seed)
+
     X = np.zeros((N, 2), dtype=np.float64)
     deg2rad = np.pi/180
     start = start * deg2rad
@@ -79,6 +85,73 @@ def twospirals(N=2000, degrees=570, start=90, noise=0.2):
     y[:N1] = 0
     return X, y
 
+def rings(c_true, num_coe=1, r_coe=1, width=0.2, seed=0):
+    r_arr = np.arange(1, c_true+1) * r_coe
+    s = 2 * np.pi * r_arr
+
+    N = int(100 * num_coe)
+    N_arr = (s/s[0] * N).astype(np.int32)
+
+    
+    X_list = list()
+    y_list = list()
+    for i in range(c_true):
+        r = r_arr[i]
+        N = N_arr[i]
+
+        phi = np.random.rand(N) * 2 * np.pi
+        dist = r + (np.random.rand(N) - 0.5) * width
+        x0 = dist * np.cos(phi)
+        x1 = dist * np.sin(phi)
+        Xi = np.concatenate((x0.reshape(-1, 1), x1.reshape(-1, 1)), axis=1)
+        X_list.append(Xi)
+
+        y = np.zeros(N) + i
+        y_list.append(y)
+    
+    X = np.concatenate(X_list, axis=0)
+    y_true = np.concatenate(y_list, axis=0)
+    return X, y_true
+
+def corners(num_coe=1, width=1, gap=2, l=5, seed=0):
+    assert l > width
+
+    np.random.seed(seed)
+    N = int(200 * num_coe)
+
+    #   (x0, y2)         (x1, y2)
+    # 
+    #
+    #   (x0, y1)         (x1, y1)
+    #    
+    #   (x0, y0) -width- (x1, y0) ................ (x2, y0)
+
+    x0, y0 = gap/2, gap/2
+    x1, y1 = x0 + width, y0 + width
+    x2, y2 = x0 + l, y0 + l
+
+    N1_ratio = (l-width) / (2 * l - width)
+    N1 = int(N * N1_ratio)
+    N2 = N - N1
+    X1_part1 = np.random.uniform([x0, y1], [x1, y2], [N1, 2])
+    X1_part2 = np.random.uniform([x0, y0], [x2, y1], [N2, 2])
+    X1 = np.concatenate((X1_part1, X1_part2), axis=0)
+
+    X2_part1 = np.random.uniform([-x1, y1], [-x0, y2], [N1, 2])
+    X2_part2 = np.random.uniform([-x2, y0], [-x0, y1], [N2, 2])
+    X2 = np.concatenate((X2_part1, X2_part2), axis=0)
+
+    X3_part1 = np.random.uniform([-x1, -y2], [-x0, -y1], [N1, 2])
+    X3_part2 = np.random.uniform([-x2, -y1], [-x0, -y0], [N2, 2])
+    X3 = np.concatenate((X3_part1, X3_part2), axis=0)
+
+    X4_part1 = np.random.uniform([x0, -y2], [x1, -y1], [N1, 2])
+    X4_part2 = np.random.uniform([x0, -y1], [x2, -y0], [N2, 2])
+    X4 = np.concatenate((X4_part1, X4_part2), axis=0)
+
+    X = np.concatenate((X1, X2, X3, X4), axis=0)
+    y_true = np.repeat(np.arange(4), N)
+    return X, y_true
 
 def data_description(data_path, data_name, version, url):
     full_name = os.path.join(data_path, f"{data_name}_{version}.mat")
@@ -137,3 +210,13 @@ def data_description(data_path, data_name, version, url):
         f.write("distribution\n")
         f.write(ind_L[:50].to_string())
         f.write("\n\n")
+
+if  __name__ == "__main__":
+
+    # X, y = twospirals()
+    # X, y = rings(3, num_coe=2)
+    X, y = corners(num_coe=1, width=1, gap=2, l=5, seed=0)
+    plt.scatter(X[:, 0], X[:, 1], c=y)
+    plt.show()
+
+
