@@ -36,8 +36,8 @@ MatrixXd FCDMF::eudist2_eigen(MatrixXd A, MatrixXd B){
 
 void FCDMF::opt(int ITER, vector<int> &p0, vector<int> &q0, int a1, int a2){
 
-    vector p = p0;
-    vector q = q0;
+    vector<int> p = p0;
+    vector<int> q = q0;
     spMatXd P = y2Y(p);
     spMatXd Q = y2Y(q);
 
