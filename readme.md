@@ -4,6 +4,12 @@
 The package is released on GitHub, so you can install it with pip
 ```
 pip install git+https://github.com/ShenfeiPei/FCDMF.git
+
+or
+
+git clone git@github.com:ShenfeiPei/FCDMF.git
+cd FCDMF
+python setup.py install
 ```
 
 ### usage:

@@ -6,7 +6,7 @@ from numpy.distutils.core import setup
 from distutils.command.sdist import sdist
 from numpy.distutils.misc_util import Configuration
 
-module_name = "alias_copyi_module_FCDMF"
+module_name = "alias_copyi_FCDMF"
 
 class CleanCommand(Clean):
     description = "Remove build artifacts from the source tree"
@@ -56,7 +56,7 @@ def configuration(parent_package='', top_path=None):
 
 
 setup(name=module_name,
-      version="0.0.2",
+      version="0.0.3",
       author="Shenfei Pei",
       author_email="shenfeipei@gmail.com",
       description="A python implementation of 'Fast Clustering With Co-Clustering Via Discrete Non-Negative Matrix Factorization for Image Identification, ICASSP, 2020'",
