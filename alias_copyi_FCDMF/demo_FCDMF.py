@@ -4,8 +4,8 @@ import time
 from scipy import sparse
 from scipy.sparse.linalg import svds
 
-from alias_copyi_module_FCDMF import FCDMF
-from alias_copyi_module_FCDMF.Public import Funs, Gfuns, Mfuns
+from alias_copyi_FCDMF import FCDMF
+from alias_copyi_FCDMF.Public import Funs, Gfuns, Mfuns
 
 def demo():
     current_dir = os.path.dirname(__file__)
