@@ -8,23 +8,24 @@ from scipy import signal
 from . import funs as Ifuns
 
 
-def get_anchor(X, m, way="random"):
+# add n_init, void warning
+def get_anchor(X, m, way="random", n_init=10):
     """
     X: n x d,
     m: the number of anchor
     way: [k-means, k-means2, k-means++, k-means++2, random]
     """
     if way == "k-means":
-        A = KMeans(m, init='random').fit(X).cluster_centers_
+        A = KMeans(m, init='random', n_init=n_init).fit(X).cluster_centers_
     elif way == "k-means2":
-        A = KMeans(m, init='random').fit(X).cluster_centers_
+        A = KMeans(m, init='random', n_init=n_init).fit(X).cluster_centers_
         D = EuDist2(A, X)
         ind = np.argmin(D, axis=1)
         A = X[ind, :]
     elif way == "k-means++":
-        A = KMeans(m, init='k-means++').fit(X).cluster_centers_
+        A = KMeans(m, init='k-means++', n_init=n_init).fit(X).cluster_centers_
     elif way == "k-means++2":
-        A = KMeans(m, init='k-means++').fit(X).cluster_centers_
+        A = KMeans(m, init='k-means++', n_init=n_init).fit(X).cluster_centers_
         D = EuDist2(A, X)
         A = np.argmin(D, axis=1)
     elif way == "random":

@@ -4,6 +4,8 @@ import time
 from scipy import sparse
 from scipy.sparse.linalg import svds
 
+# import sys
+# sys.path.append("../")  test, run in alias_copyi_FCDMF/
 from alias_copyi_FCDMF import FCDMF
 from alias_copyi_FCDMF.Public import Funs, Gfuns, Mfuns
 
