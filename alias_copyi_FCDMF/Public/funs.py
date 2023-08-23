@@ -153,7 +153,7 @@ def eig1(A, c, isMax=True, isSym=True):
     return eigvec, eigval, eigval_full
 
 
-def KMeans(X, c, rep, init="random", algorithm="auto"):
+def KMeans(X, c, rep, init="random", algorithm="lloyd"):
     '''
     :param X: 2D-array with size of N x dim
     :param c: the number of clusters to construct
